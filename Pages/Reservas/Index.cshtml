@@ -1,0 +1,81 @@
+@page
+@model SistemaDeReservas.Pages_Reservas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form>
+    <p>
+        <label>Nombre o Email: <input type="text" asp-for="SearchString" /></label>
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
+
+<form>
+    <p>
+        <label>Fecha: <input type="date" asp-for="SearchDate" /></label>
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reserva[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reserva[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reserva[0].Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reserva[0].Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reserva[0].Detalles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reserva[0].Precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reserva)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Detalles)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
