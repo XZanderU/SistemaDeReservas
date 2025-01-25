@@ -27,10 +27,3 @@ Antes de comenzar, asegúrate de tener instalados los siguientes componentes:
    ```bash
    git clone https://github.com/XZanderU/SistemaDeReservas.git
    cd SistemaDeReservas
-
-
-### ¿Por qué ahora debería funcionar? 
-- **Formato Markdown**: GitHub interpreta automáticamente los archivos `README.md` y los renderiza como texto con formato.
-- **HTML embebido**: Solo se utiliza en partes específicas para facilitar la copia de comandos o enlaces.
-
-Prueba este archivo en tu repositorio y debería verse correctamente. 😊
